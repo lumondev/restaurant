@@ -1,0 +1,19 @@
+.welcome {
+  background-color: $general-color;
+  color: $white;
+  text-align: center;
+  padding: 1rem;
+  padding-bottom: 3rem;
+  h2 {
+    margin: 2rem 0;
+    font-size: 1.8rem;
+    font-family: "Pacifico", cursive;
+    font-weight: 100;
+  }
+}
+
+@media screen and (min-width: $medium-sc) {
+  .welcome {
+    margin-top: 2rem;
+  }
+}

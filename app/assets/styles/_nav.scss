@@ -1,0 +1,125 @@
+.nav {
+  &__container {
+    position: relative;
+    z-index: 200;
+    background-color: $bg-black;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0.5rem;
+  }
+
+  &__btn {
+    display: block;
+    color: $white;
+    border: 1px solid $white;
+    border-radius: 3px;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 1.5rem;
+    i {
+      pointer-events: none;
+    }
+  }
+
+  &__menu {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    height: 0;
+    overflow: hidden;
+    transition: height 0.3s linear;
+    list-style: none;
+
+    .link {
+      display: block;
+      padding: 1rem;
+      text-decoration: none;
+      color: #fff;
+      width: 100%;
+
+      &:hover {
+        background-color: $hover-color;
+      }
+    }
+  }
+
+  &__social {
+    display: flex;
+    justify-content: space-between;
+    i {
+      color: black;
+      margin-left: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.3em;
+      width: 35px;
+      height: 35px;
+      background-color: $white;
+      border-radius: 50%;
+      transition: all 0.6s ease;
+      &:hover {
+        background-color: $general-color;
+        color: $white;
+        transform: translateY(-15%);
+      }
+    }
+    a {
+      text-decoration: none;
+    }
+  }
+
+  .display {
+    height: 200px;
+  }
+
+  .selected {
+    background-color: $general-color;
+  }
+}
+
+@media screen and (min-width: $medium-sc) {
+  .nav {
+    &__menu {
+      font-size: 1.1rem;
+    }
+  }
+}
+
+@media screen and (min-width: $big-sc) {
+  .nav {
+    background-color: $bg-black;
+    &__container {
+      background: none;
+    }
+
+    &__btn {
+      display: none;
+    }
+
+    &__menu {
+      position: static;
+      display: flex;
+      height: auto;
+      width: auto;
+      text-align: center;
+      .link {
+        width: 120px;
+        padding: 0;
+        padding-top: 20px;
+        padding-bottom: 20px;
+      }
+    }
+  }
+}

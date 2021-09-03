@@ -1,0 +1,42 @@
+// VARIABLES
+$general-color: #fa774f;
+$hover-color: #fa500f;
+$white: #ffffff;
+$black: #000000;
+$footer-bg: #222;
+$grey: #888888;
+$bg-black: rgba(0, 0, 0, 0.6);
+$title-font: "Pacifico", cursive;
+$text-font: "Montserrat", sans-serif;
+$form-ok: #4caf50;
+$form-error: #f44336;
+
+//MEDIA QUERY BREAKPOINTS
+$small-sc: 480px;
+$medium-sc: 768px;
+$big-sc: 1024px;
+$xbig-sc: 1600px;
+
+//General imports, visible in all pages
+@import "general";
+@import "header";
+@import "nav";
+@import "banner";
+@import "welcome";
+@import "footer";
+
+//Particular imports
+
+//HOME SECTION
+@import "special";
+
+//ABOUT US SECTION
+@import "team";
+
+//GALLERY SECTION
+@import "gallery";
+@import "modal";
+
+//CONTACT SECTION
+// @import "social";
+@import "form";

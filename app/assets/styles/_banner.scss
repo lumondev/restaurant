@@ -1,0 +1,62 @@
+.banner {
+  margin-top: -55px;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: $bg-black;
+  }
+
+  &__img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+  }
+  &__content {
+    width: 95%;
+    color: $white;
+    text-align: center;
+    position: absolute;
+    z-index: 150;
+    top: 45%;
+    left: 50%;
+    transform: translateX(-50%) translateY(50%);
+    font-size: 2rem;
+    font-weight: bold;
+    .hide {
+      filter: brightness(0%);
+    }
+  }
+}
+
+@media screen and (min-width: $small-sc) {
+  .banner {
+    height: 100vh;
+    margin-top: -200px;
+    z-index: -1000;
+    img {
+      filter: brightness(40%);
+      height: 100%;
+    }
+  }
+}
+
+@media screen and (min-width: $medium-sc){
+  .banner{
+    &__content{
+      font-size: 2.5rem;
+    }
+  }
+}
+
+@media screen and (min-width: $big-sc){
+  .banner{
+    height: 110vh;
+    &__content{
+      font-size: 3rem;
+    }
+  }
+}

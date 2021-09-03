@@ -1,0 +1,112 @@
+.modal {
+  display: none;
+  width: 100%;
+  min-height: 100vh; /* Minimo del viewport*/
+  background-color: rgba(0, 0, 0, 0.9);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10000;
+  &__content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: auto;
+  }
+  &__img {
+    object-fit: cover;
+    width: 400px;
+    height: 300px;
+  }
+  &__btn {
+    position: absolute;
+    top: 20%;
+    right: 0px;
+    color: #fff;
+    cursor: pointer;
+    font-weight: bold;
+
+    font-size: 2rem;
+    text-align: center;
+    &:hover {
+      color: $general-color;
+    }
+  }
+
+  &__arrow {
+    position: absolute;
+    color: #fff;
+    cursor: pointer;
+    font-weight: bold;
+    background: $general-color;
+    font-size: 3rem;
+    text-align: center;
+    background-color: $bg-black;
+    padding: 0 20px;
+    &:hover {
+      color: $general-color;
+    }
+    &.next {
+      bottom: 50px;
+      right: 65px;
+    }
+    &.prev {
+      bottom: 50px;
+      left: 65px;
+    }
+  }
+
+  &--open {
+    display: block;
+  }
+}
+
+.avoid--scrolling {
+  height: 100%;
+  overflow: hidden;
+}
+
+@media screen and (min-width: $small-sc) {
+  .modal {
+    &__btn {
+      right: 20px;
+      top: 20px;
+    }
+    &__img {
+      height: 350px;
+      width: 350px;
+    }
+  }
+}
+
+@media screen and (min-width: $medium-sc) {
+  .modal {
+    &__img {
+      height: 500px;
+      width: 500px;
+    }
+  }
+}
+
+@media screen and (min-width: $big-sc) {
+  .modal {
+    &__arrow,
+    &__btn {
+      font-size: 3rem;
+    }
+    &__img {
+      height: 750px;
+      width: 750px;
+    }
+  }
+}
+
+@media screen and (min-width: $xbig-sc) {
+  .modal {
+    &__img {
+      height: 900px;
+      width: 900px;
+    }
+  }
+}
