@@ -12,9 +12,10 @@ html {
 
 body {
   margin: 0;
-  overflow-x: hidden;
   font-family: "Montserrat", sans-serif;
   font-size: 16px;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 img {
@@ -387,7 +388,7 @@ button {
   background: #222;
   color: #ffffff;
   padding: 20px 10px;
-  font-size: 1rem;
+  font-size: .8rem;
 }
 
 .footer a {
@@ -415,7 +416,6 @@ button {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    font-size: 0.8rem;
     text-align: center;
   }
 }
@@ -750,10 +750,9 @@ button {
 }
 
 .form {
-  display: inline-block;
-  -webkit-transform: translateY(15%);
-          transform: translateY(15%);
-  padding-bottom: 100px;
+  padding: 50px 0;
+  width: 98%;
+  margin: auto;
 }
 
 .form__label, .form__input, .form__textarea {
@@ -794,7 +793,8 @@ button {
   font-size: 1rem;
   padding-left: 10px;
   padding-top: 10px;
-  border: 1px solid #888888;
+  border: 1px solid black;
+  resize: none;
 }
 
 .form__submit {
@@ -873,8 +873,15 @@ button {
   }
 }
 
+@media screen and (min-width: 1600px) {
+  .form {
+    display: inline-block;
+    -webkit-transform: translateY(15%);
+            transform: translateY(15%);
+  }
+}
+
 .social {
-  display: inline-block;
   padding: 10px;
 }
 
@@ -882,8 +889,7 @@ button {
   font-family: "Pacifico", cursive;
   font-weight: 100;
   text-align: center;
-  font-size: 2rem;
-  width: 100vw;
+  font-size: 1.3rem;
   padding-bottom: 2rem;
 }
 
@@ -939,5 +945,11 @@ button {
 
 .social__bar a {
   text-decoration: none;
+}
+
+@media screen and (min-width: 1600px) {
+  .social {
+    display: inline-block;
+  }
 }
 /*# sourceMappingURL=style.css.map */

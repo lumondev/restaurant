@@ -9,9 +9,10 @@ html {
 
 body {
   margin: 0;
-  overflow-x: hidden;
   font-family: "Montserrat", sans-serif;
   font-size: 16px;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 img {
