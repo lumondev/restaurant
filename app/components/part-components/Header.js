@@ -5,7 +5,7 @@ export function Header() {
   $header.innerHTML = `
   <div class="header__container container">
         <div class="header__title column--50">
-            <h1>Your Restaurant</h1>
+            <a href="/#"><h1>Your Restaurant</h1></a>
         </div>
     
         <div class="header__contact column--50">

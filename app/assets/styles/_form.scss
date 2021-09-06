@@ -1,5 +1,7 @@
 .form {
-  padding: 30px 10px;
+  display: inline-block;
+  transform: translateY(15%);
+  padding-bottom: 100px;  
   &__label,
   &__input,
   &__textarea {
@@ -70,7 +72,16 @@
   }
 }
 
-.form-error.is-active {
+.contact-form-error {
+  text-align: center;
+  font-size: 1rem;
+  padding: 0.3rem;
+  background-color: $form-error;
+  color: $white;
+  transition: all 800ms ease;
+}
+
+.contact-form-error.is-active {
   display: block;
   animation: show-message 1s 1 normal 0s ease-out both;
 }

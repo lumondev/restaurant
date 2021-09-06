@@ -1,3 +1,5 @@
+import { sendEmail } from "../helpers/send-email.js";
+
 const d = document;
 
 export function Form() {
@@ -5,7 +7,9 @@ export function Form() {
   $div.classList.add("form", "column--50");
 
   $div.innerHTML = `
-    <form action="https://formsubmit.co/molinalucas1994@gmail.com" method="POST" target="_blank" class="form__main" id="form">
+    <form
+    class="form__main" 
+    id="form">
         <label class="form__label">Nombre </label>
         <input
             type="text"
@@ -40,7 +44,7 @@ export function Form() {
         <input type="submit" name="" class="form__submit" id="form-submit" value="Enviar" />
 
         <div class="form__loader none">
-           <img src="../app/assets/images/loader.svg" alt="Cargando">
+           <img src="app/assets/images/loader.svg" alt="Cargando...">
         </div>
 
         <div class="form__response none">
@@ -71,10 +75,11 @@ function validateForm() {
   d.addEventListener("keyup", (e) => {
     if (e.target.matches(".form__input")) {
       let $input = e.target,
-        pattern = $input.pattern;
+        pattern = $input.pattern || $input.dataset.pattern;
 
       if (pattern && $input.value !== "") {
         let regex = new RegExp(pattern);
+
         return !regex.exec($input.value)
           ? d.getElementById($input.name).classList.add("is-active")
           : d.getElementById($input.name).classList.remove("is-active");
@@ -97,6 +102,7 @@ function validateForm() {
     $loader.classList.remove("none");
 
     setTimeout(() => {
+      sendEmail($form.name.value, $form.email.value, $form.comments.value);
       $loader.classList.add("none");
       $response.firstChild.textContent = `Gracias ${$inputs[0].value} por dejar tus comentarios!`;
       $response.classList.remove("none");
